@@ -1,15 +1,19 @@
 package com.teste.aptidao.vendassm.cliente;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.teste.aptidao.vendassm.venda.Vendas;
 
+import javax.persistence.*;
+
+@Entity
 public class NovoCliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
     private String cpfOrCnpj;
+
+//    @OneToMany
+  //  Vendas vendas;
 
     public NovoCliente(String nome, String cpfOrCnpj) {
         this.nome = nome;
