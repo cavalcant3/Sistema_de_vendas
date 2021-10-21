@@ -1,12 +1,10 @@
 package com.teste.aptidao.vendassm.produto;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 import java.util.Properties;
 
 @RestController
@@ -23,5 +21,12 @@ public class ProdutoController {
         produtoRepository.save(novoProduto);
         return novoProduto;
     }
+    @GetMapping
+    public List<Produto> listarProdutos(){
+    List<Produto> produtos = produtoRepository.findAll();
+    return produtos;
+
+    }
+
 
 }
