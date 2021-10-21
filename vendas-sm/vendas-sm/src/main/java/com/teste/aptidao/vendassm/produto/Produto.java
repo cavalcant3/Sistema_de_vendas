@@ -1,5 +1,7 @@
 package com.teste.aptidao.vendassm.produto;
 
+import com.teste.aptidao.vendassm.venda.Vendas;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,6 +11,9 @@ public class Produto {
     private Integer id;
     private Double preco;
     private String nome;
+    //definindo relações
+    @ManyToOne
+    Vendas vendas;
 
     @Deprecated
     public Produto() {
