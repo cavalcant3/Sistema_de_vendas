@@ -11,6 +11,7 @@ public class Produto {
     private Integer id;
     private Double preco;
     private String nome;
+
     //definindo relações
     @ManyToOne
     Vendas vendas;
